@@ -1,8 +1,8 @@
 # PCSTracker
 
 PCSTracker estimates long-term 3D trajectories for query points in a temporal
-point-cloud sequence. This release contains the model, its trained weights, the
-Odyssey training entry point, and a file-driven inference demo.
+point-cloud sequence. This release contains the model code, the Odyssey
+training entry point, and a file-driven inference demo.
 
 ## Requirements
 
@@ -28,7 +28,7 @@ The extension must be rebuilt after changing the PyTorch or CUDA version.
 
 ## Pretrained weights
 
-The included checkpoint is located at:
+Pretrained weights are not included in this repository. Place the checkpoint at:
 
 ```text
 checkpoints/PCSTracker.pth
@@ -88,7 +88,7 @@ Each training archive must contain:
 - `valids`: `[T, M]` or `[T, M, 1]` validity values.
 
 The loader changes the sign of the first two coordinate axes to match the
-training convention used by the included checkpoint.
+training convention used by PCSTracker.
 
 ## Training
 
@@ -110,4 +110,3 @@ Experiment tracking is disabled by default. Enable it with
 ## License
 
 See [LICENSE](LICENSE).
-
