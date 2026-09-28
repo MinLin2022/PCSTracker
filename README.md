@@ -41,8 +41,8 @@ selected with `--checkpoint`.
 
 The demo reads one `.npz` file with exactly these arrays:
 
-- `video_pc`: `float32` array shaped `[T, N, 3]`. The sequence must contain at
-  least 16 frames and at least 4096 points per frame.
+- `video_pc`: `float32` array shaped `[T, N, 3]`, containing `T` point-cloud
+  frames with `N` points per frame.
 - `query_points`: `float32` array shaped `[M, 4]`. Each row is
   `[start_frame, x, y, z]`; `start_frame` must be an integer in `[0, T)`.
 
@@ -98,7 +98,7 @@ GPUs:
 
 ```bash
 torchrun --standalone --nproc_per_node=4 run_train.py \
-  --data-root /path/to/PointOdyssey3D-8192 \
+  --data-root /path/to/PointOdyssey3D \
   --batch-size 4 \
   --output-dir exp
 ```
