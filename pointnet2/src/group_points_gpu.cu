@@ -77,7 +77,6 @@ void group_points_kernel_launcher_fast(int b, int c, int n, int npoints, int nsa
     dim3 threads(THREADS_PER_BLOCK);
 
     group_points_kernel_fast<<<blocks, threads, 0, stream>>>(b, c, n, npoints, nsample, points, idx, out);
-    // cudaDeviceSynchronize();  // for using printf in kernel function
     err = cudaGetLastError();
     if (cudaSuccess != err) {
         fprintf(stderr, "CUDA kernel failed : %s\n", cudaGetErrorString(err));
